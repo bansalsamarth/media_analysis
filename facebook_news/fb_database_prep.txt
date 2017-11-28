@@ -1,0 +1,18 @@
+CREATE TABLE facebook_news (
+	page_id VARCHAR (250),
+	status_id VARCHAR (50),
+	status_message TEXT,
+	link_name TEXT,
+	status_type VARCHAR (20),
+	status_link TEXT,
+	status_published VARCHAR (100),
+	num_reactions INT,
+	num_comments INT,
+	num_shares INT,
+	num_likes INT,
+	num_loves INT,
+	num_wows INT,
+	num_hahas INT,
+	num_sads INT,
+	num_angrys INT
+);

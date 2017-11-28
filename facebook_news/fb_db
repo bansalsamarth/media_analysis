@@ -1,0 +1,41 @@
+export PATH=${PATH}:/usr/local/mysql/bin
+
+mysql -u root -p
+password: test123
+
+CREATE DATABASE social_media;
+USE social_media;
+
+CREATE TABLE facebook_news (
+	page_id VARCHAR (250),
+	status_id VARCHAR (50),
+	status_message TEXT,
+	link_name TEXT,
+	status_type VARCHAR (20),
+	status_link TEXT,
+	status_published VARCHAR (100),
+	num_reactions INT,
+	num_comments INT,
+	num_shares INT,
+	num_likes INT,
+	num_loves INT,
+	num_wows INT,
+	num_hahas INT,
+	num_sads INT,
+	num_angrys INT
+);
+
+PYTHON CODE
+
+db = MySQLdb.connect("localhost","root","test123","social_media" )
+cursor = db.cursor()
+
+formatted_status_data = []
+for i in status_data:
+	formatted_status_data.append(MySQLdb.escape_string(str(i)))
+
+sql = """INSERT INTO facebook_posts(page_id,status_id,status_message,link_name,status_type,status_link,status_published,num_reactions,num_comments,num_shares,num_likes,num_loves,num_wows,num_hahas,num_sads,num_angrys) VALUES ( "{0}", "{1}", "{2}", "{3}", "{4}", "{5}", "{6}", {7}, {8}, {9}, {10}, {11}, {12}, {13}, {14}, {15})""".format(*formatted_status_data)
+
+
+cursor.execute(sql)
+db.commit()

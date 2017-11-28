@@ -1,0 +1,4 @@
+app-env
+*.pyc
+papers/
+.DS_Store
