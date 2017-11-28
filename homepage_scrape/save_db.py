@@ -5,7 +5,6 @@ HOST = os.environ['DB_HOST']
 USER = os.environ['DB_USER']
 PWD = os.environ['DB_PWD']
 DBNAME = "news_articles"
-#HOST = "104.154.144.23"
 
 db = MySQLdb.connect(HOST,USER,PWD,DBNAME)
 cursor = db.cursor()
